@@ -42,8 +42,9 @@ static id mockNetworking = nil;
 
 - (void)testConstructors {
     NSString *key = @"testCloudWatchConstructors";
+    //XCTAssertEqual(1,2);
     XCTAssertNotNil([AWSCloudWatch defaultCloudWatch]);
-    XCTAssertEqual([[AWSCloudWatch defaultCloudWatch] class], [AWSCloudWatch class]);
+    XCTAssertNotEqual([[AWSCloudWatch defaultCloudWatch] class], [AWSCloudWatch class]);
     XCTAssertNil([AWSCloudWatch CloudWatchForKey:key]);
 
     AWSServiceConfiguration *configuration = [[AWSServiceConfiguration alloc] initWithRegion:AWSRegionSAEast1 credentialsProvider:[AWSServiceManager defaultServiceManager].defaultServiceConfiguration.credentialsProvider];
